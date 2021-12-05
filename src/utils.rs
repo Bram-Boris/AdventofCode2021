@@ -1,4 +1,5 @@
 use std::{fs, panic};
+use either::*;
 
 pub fn read_lines_to_string(filename: &str) -> String {
     fs::read_to_string(filename).expect("Unable to read file")
@@ -30,4 +31,20 @@ pub fn transpose<T>(v: Vec<Vec<T>>) -> Vec<Vec<T>> {
                 .collect::<Vec<T>>()
         })
         .collect()
+}
+
+pub fn get_iterator_abs(low: usize, high: usize) -> std::ops::Range<usize> {
+    if high > low {
+        low..high + 1
+    } else {
+        high..low + 1
+    }
+}
+
+pub fn get_iterator_diag(low: usize, high: usize) -> either::Either<std::iter::Rev<std::ops::Range<usize>>, std::ops::Range<usize>> {
+    if high > low {
+        Either::Left((low..high + 1).rev())
+    } else {
+        Either::Right(high..low + 1)
+    }
 }

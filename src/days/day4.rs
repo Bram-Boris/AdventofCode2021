@@ -126,7 +126,6 @@ impl Board {
 pub fn solve() -> u32 {
     let mut bingo = Bingo::new();
     for number in bingo.order.clone() {
-        println!("Number drawn: {}", number);
         bingo.draw_number(number);
 
         if let Some(value) = bingo.won_boards.first() {
@@ -140,9 +139,7 @@ pub fn solve() -> u32 {
 pub fn solve_last_board() -> u32 {
     let mut bingo = Bingo::new();
     for number in bingo.order.clone() {
-        println!("Number drawn: {}", number);
         bingo.draw_number(number);
-        println!("There are boards: {} of which: {} have bingo", bingo.boards.len(), bingo.won_boards.len());
         if bingo.total_boards == bingo.won_boards.len() {
             return bingo.won_boards.last().unwrap().earnings() * number;
         }
