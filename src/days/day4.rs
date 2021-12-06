@@ -7,12 +7,11 @@ struct Board {
     values: Vec<Vec<(u32, bool)>>,
 }
 
-
 struct Bingo {
     boards: Vec<Board>,
     won_boards: Vec<Board>,
     order: Vec<u32>,
-    total_boards: usize
+    total_boards: usize,
 }
 
 impl Bingo {
@@ -46,13 +45,13 @@ impl Bingo {
 
         boards.push(board);
 
-        let len =  boards.len();
+        let len = boards.len();
 
         Bingo {
             boards,
             won_boards: Vec::<Board>::new(),
             order,
-            total_boards: len
+            total_boards: len,
         }
     }
     fn draw_number(&mut self, number: u32) {

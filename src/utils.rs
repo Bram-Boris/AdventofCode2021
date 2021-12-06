@@ -1,5 +1,5 @@
-use std::{fs, panic};
 use either::*;
+use std::{fs, panic};
 
 pub fn read_lines_to_string(filename: &str) -> String {
     fs::read_to_string(filename).expect("Unable to read file")
@@ -41,7 +41,10 @@ pub fn get_iterator_abs(low: usize, high: usize) -> std::ops::Range<usize> {
     }
 }
 
-pub fn get_iterator_diag(low: usize, high: usize) -> either::Either<std::iter::Rev<std::ops::Range<usize>>, std::ops::Range<usize>> {
+pub fn get_iterator_diag(
+    low: usize,
+    high: usize,
+) -> either::Either<std::iter::Rev<std::ops::Range<usize>>, std::ops::Range<usize>> {
     if high > low {
         Either::Left((low..high + 1).rev())
     } else {
