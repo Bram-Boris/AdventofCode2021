@@ -22,4 +22,7 @@ fn main() {
 
     day6::solve_first_puzzle();
     day6::solve_second_puzzle();
+
+    day7::solve_first_puzzle();
+    day7::solve_second_puzzle();
 }
