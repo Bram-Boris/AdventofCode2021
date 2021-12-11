@@ -42,7 +42,6 @@ impl School {
         let birthed_fishies = self.fishies[0].current_fishies;
         for fish_age in 0..8 {
             self.fishies[fish_age].current_fishies = self.fishies[fish_age + 1].current_fishies;
-
         }
 
         self.fishies[8].current_fishies = birthed_fishies;

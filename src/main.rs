@@ -28,4 +28,13 @@ fn main() {
 
     day8::solve_first_puzzle();
     day8::solve_second_puzzle();
+
+    day9::solve_first_puzzle();
+    day9::solve_second_puzzle();
+
+    day10::solve_first_puzzle();
+    day10::solve_second_puzzle();
+
+    day11::solve_first_puzzle();
+    day11::solve_second_puzzle();
 }
