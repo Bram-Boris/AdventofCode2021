@@ -7,11 +7,11 @@ struct SegmentDisplay {
     output: Vec<String>,
     mapping: HashMap<u32, String>,
     top: String,
-    middle: String,
-    bottom: String,
+    _middle: String,
+    _bottom: String,
     top_right: String,
     bottom_right: String,
-    top_left: String,
+    _top_left: String,
     bottom_left: String,
 }
 
@@ -32,17 +32,17 @@ impl SegmentDisplay {
                 .collect::<Vec<String>>(),
             mapping: HashMap::new(),
             top: String::new(),
-            middle: String::new(),
-            bottom: String::new(),
+            _middle: String::new(),
+            _bottom: String::new(),
             top_right: String::new(),
             bottom_right: String::new(),
-            top_left: String::new(),
+            _top_left: String::new(),
             bottom_left: String::new(),
         }
     }
 
     pub fn parse_unique_digits(&mut self) {
-        self.input.iter().enumerate().for_each(|(index, number)| {
+        self.input.iter().enumerate().for_each(|(_index, number)| {
             match number.len() {
                 2 => self.mapping.insert(1, number.to_string()),
                 4 => self.mapping.insert(4, number.to_string()),

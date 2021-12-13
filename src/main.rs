@@ -37,4 +37,7 @@ fn main() {
 
     day11::solve_first_puzzle();
     day11::solve_second_puzzle();
+
+    day13::solve_first_puzzle();
+    day13::solve_second_puzzle();
 }

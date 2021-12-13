@@ -105,7 +105,13 @@ pub fn solve_second_puzzle() {
     let mut octopi = Octopi::new();
 
     let mut step = 0;
-    while octopi.grid.iter().map(|r| r.iter().sum::<u32>()).sum::<u32>() != 0 {
+    while octopi
+        .grid
+        .iter()
+        .map(|r| r.iter().sum::<u32>())
+        .sum::<u32>()
+        != 0
+    {
         step += 1;
         octopi.step();
     }

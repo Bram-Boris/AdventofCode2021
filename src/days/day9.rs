@@ -20,7 +20,7 @@ pub fn solve_first_puzzle() {
     }
 
     for (index_y, y) in heightmap.iter().enumerate() {
-        for (index_x, x) in y.iter().enumerate() {
+        for (index_x, _x) in y.iter().enumerate() {
             let current_value = heightmap[index_y][index_x];
             let mut top: Option<isize> = None;
             let mut bottom: Option<isize> = None;
